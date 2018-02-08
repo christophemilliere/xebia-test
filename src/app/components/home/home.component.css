@@ -1,0 +1,22 @@
+.search {
+  width: 500px;
+  margin: 0 auto 57px auto;
+}
+
+.content-book {
+  margin: 0 auto;
+}
+
+.cover {
+  height: 151px;
+}
+
+.card {
+  padding: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  width: 100%;
+}

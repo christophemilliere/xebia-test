@@ -1,0 +1,15 @@
+.cart {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cart-cover {
+  height: 150px
+}
+
+.btn-delete {
+  height: 40px;
+}
+
+;

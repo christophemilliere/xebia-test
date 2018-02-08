@@ -1,0 +1,15 @@
+<div class="container content-book">
+  <div class="form-group search">
+    <input type="text" [(ngModel)]="searchTerm" class="form-control" aria-describedby="search" placeholder="Votre recherche">
+  </div>
+  <div *ngFor="let book of books | bookFilter:searchTerm">
+    <div class="card flex-row">
+      <img class="cover" src="{{book.cover}}" alt="{{book.title}}">
+      <div class="card-body">
+        <h5 class="card-title">{{book.title}}</h5>
+        <p class="card-text">{{book.synopsis[0]}}</p>
+      </div>
+      <button type="button" class="btn btn-outline-success" (click)="selectedBook(book)">Ajouter au panier</button>
+    </div>
+  </div>
+</div>

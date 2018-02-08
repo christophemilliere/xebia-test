@@ -1,0 +1,41 @@
+<div class="container">
+  <a routerLink="/home">Retour à la boutique</a>
+  <ng-container *ngIf="booksDiscount.length >= 1">
+    <h1> Votre panier</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Article(s)</th>
+          <th scope="col" class="text-center">Titre</th>
+          <th scope="col" class="text-center">Prix</th>
+          <th scope="col" class="text-center"> Supprimer l'article</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of booksDiscount">
+          <td class="text-center"><img class="cart-cover" [src]="book.cover" /></td>
+          <td class="text-center">{{book.title}}</td>
+          <td class="text-center">{{book.price | currency: 'EUR'}}</td>
+          <td class="text-center"><button type="button" class=" btn-delete btn btn-outline-danger" (click)="deletedBook(book)">
+              <span class="oi oi-x"></span></button></td>
+        </tr>
+        <tr>
+          <th scope="col" class="text-center">Total</th>
+          <th scope="col"></th>
+          <th scope="col" class="text-center">{{total | currency: 'EUR'}}</th>
+          <th scope="col" class="text-center">
+            <button type="button" class=" btn-delete btn btn-outline-success" (click)="payment()">
+              Payer
+            </button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+  <div *ngIf="messagePayment" class="alert alert-success" role="alert">
+    {{messagePayment}}
+  </div>
+  <div class="text-center" *ngIf=" booksDiscount.length == 0">
+    <p>Votre panier est vide</p>
+  </div>
+</div>

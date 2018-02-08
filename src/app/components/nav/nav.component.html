@@ -1,0 +1,10 @@
+<nav>
+  <div class="logo">
+    <img src="https://cdn.xebia.com/assets/logos/xebia_logo-large-transparent.png" />
+  </div>
+
+  <button [disabled]="!countItem" routerLink="/cart" type="button" class="btn-cart btn btn-primary">
+    <span class="oi oi-cart"></span>
+    <span>Item {{countItem}} cart</span>
+  </button>
+</nav>
